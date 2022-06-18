@@ -34,6 +34,9 @@ def start_timer():
     working_time_fraction = time.strptime(working_time_tuple, '%Y-%m-%d %H:%M:%S')
     working_timestamp = time.mktime(working_time_fraction)
     print(working_timestamp)
+    
+    if working_timestamp < current_timestamp:
+        duration_timer_label.config(text="You have key in the wrong time.")
 
     time_difference = int(working_timestamp - current_timestamp)
     # print(time_difference)
